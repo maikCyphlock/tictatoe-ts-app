@@ -1,15 +1,17 @@
 import React from "react";
 import { Board, setboard, useBoolean,useState } from "../index";
+
+
 const ResetBtn = ({
   setBoard,
   setWinner,
   setWin,
   setTurn,
 }: {
-  setBoard: setboard<Board>;
-  setWinner: useState<string>;
-  setWin: useBoolean<boolean>;
-  setTurn: useState<string>;
+  setBoard: setboard<Board> | any;
+  setWinner: useState<string> | any;
+  setWin: useBoolean<boolean> | any;
+  setTurn: useState<string> | any ;
 }) => {
   const handlerClick = () => {
     setBoard({
@@ -32,7 +34,9 @@ const ResetBtn = ({
 
   return (
     <button onClick={handlerClick} className="ResetBtn">
-      <box-icon name="reset" color="#1bcbac"></box-icon>
+    
+      <i className='bx bx-reset' style={{color:'#1bcbac',fontSize:'1.2rem'}}></i>
+      
     </button>
   );
 };
